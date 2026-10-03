@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600&family=Noto+Serif+TC:wght@500;600;700&display=swap");
+/* Fonts are loaded via <link> in index.html (avoids render-blocking @import chain). */
 
 :root {
   --ink: #0f1419;
@@ -83,8 +83,8 @@ a { color: inherit; text-decoration: none; }
   font-family: inherit;
 }
 .btn:active { transform: scale(0.97); }
-.btn-steel { background: var(--steel); color: var(--paper); }
-.btn-steel:hover { background: var(--steel-deep); }
+.btn-steel { background: var(--steel); color: var(--ink); font-weight: 600; }
+.btn-steel:hover { background: #a3b2c4; }
 .btn-ink { background: var(--ink); color: var(--paper); }
 .btn-ink:hover { background: var(--ink-soft); }
 .btn-ghost {
@@ -186,7 +186,7 @@ a { color: inherit; text-decoration: none; }
 }
 .section-num {
   font-family: var(--display);
-  color: var(--steel);
+  color: #56677c;
   font-size: 14px;
   letter-spacing: 0.12em;
 }
@@ -203,7 +203,7 @@ a { color: inherit; text-decoration: none; }
 .card p { margin: 0; color: var(--muted); font-size: 14px; }
 .card .idx {
   font-family: var(--display);
-  color: var(--steel);
+  color: #56677c;
   font-size: 13px;
   letter-spacing: 0.08em;
 }
@@ -212,7 +212,7 @@ a { color: inherit; text-decoration: none; }
   margin-top: 14px;
   font-size: 13px;
   font-weight: 600;
-  color: var(--steel-deep);
+  color: #4f6074;
 }
 .card-link:hover { color: var(--ink); }
 
@@ -255,7 +255,7 @@ a { color: inherit; text-decoration: none; }
 .exp .loc {
   font-size: 12px;
   letter-spacing: 0.08em;
-  color: var(--steel-deep);
+  color: #4f6074;
   text-transform: uppercase;
 }
 
@@ -359,7 +359,7 @@ a { color: inherit; text-decoration: none; }
 .result-card .tag {
   font-size: 12px;
   letter-spacing: 0.1em;
-  color: var(--steel-deep);
+  color: #4f6074;
   text-transform: uppercase;
 }
 .result-card h3 {
@@ -448,11 +448,49 @@ html.is-en a.lang-en.card-link,
 html.is-en .btn .lang-en { display: inline; }
 html.is-en li.lang-en { display: flex; }
 
+.hero-note {
+  margin: 14px 0 0;
+  font-size: 13px;
+  color: color-mix(in srgb, var(--paper) 62%, transparent);
+}
+.hero-note a, .hero-aside .status a {
+  color: #c9d6e6;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.hero-aside .status {
+  margin: 12px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--line-dark);
+  color: color-mix(in srgb, var(--paper) 70%, transparent);
+}
+:focus-visible { outline: 2px solid var(--steel); outline-offset: 3px; }
+
+.sat { background: #ebe6db; }
+.sat-grid {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 1.3fr 0.7fr;
+  align-items: center;
+}
+.sat h2 { margin-top: 8px; }
+.sat .kicker { color: #56677c; }
+.sat p { margin: 0 0 12px; max-width: 38rem; }
+.sat-actions { display: flex; flex-direction: column; gap: 12px; }
+
 @media (max-width: 900px) {
+  .hero { padding-top: 48px; }
+  .hero-grid { gap: 24px; padding-bottom: 32px; }
+  .hero-aside { padding: 20px; border-radius: 18px; }
+  .hero-aside .quote { font-size: 18px; margin-bottom: 10px; }
+  .sat-grid { grid-template-columns: 1fr; }
+  .section { padding: 56px 0; }
   .hero-grid, .about-grid, .weekly-grid, .consult-grid,
   .grid-3, .grid-2, .results-grid { grid-template-columns: 1fr; }
   .exp { grid-template-columns: 1fr; }
   .nav .hide-sm { display: none; }
+  .brand span { font-size: 16px; }
+  .nav a { padding: 8px 7px; }
   .stats { grid-template-columns: 1fr; }
   .stats > div {
     border-right: 0;
@@ -461,3 +499,11 @@ html.is-en li.lang-en { display: flex; }
   }
   .stats > div:last-child { border-bottom: 0; }
 }
+
+/* Fix: .contact-pill strong {display:block} overrode the language toggle */
+.contact-pill strong.lang-en { display: none; }
+html.is-en .contact-pill strong.lang-zh { display: none; }
+html.is-en .contact-pill strong.lang-en { display: block; }
+.weekly-points li.lang-en { display: none; }
+html.is-en .weekly-points li.lang-zh { display: none; }
+html.is-en .weekly-points li.lang-en { display: flex; }
