@@ -551,10 +551,11 @@ html.is-en .weekly-points li.lang-en { display: flex; }
 .exam99-points li.lang-en { display: none; }
 html.is-en .exam99-points li.lang-zh { display: none; }
 html.is-en .exam99-points li.lang-en { display: flex; }
+.exam99-scopes-wrap { margin-top: 28px; }
 .exam99-scope-title {
   font-family: var(--display);
   font-size: 18px;
-  margin: 18px 0 6px;
+  margin: 0 0 6px;
 }
 .exam99-note {
   margin: 0 0 12px;
