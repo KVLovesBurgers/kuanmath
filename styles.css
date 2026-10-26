@@ -477,13 +477,15 @@ html.is-en li.lang-en { display: flex; }
 .sat .kicker { color: #56677c; }
 .sat p { margin: 0 0 12px; max-width: 38rem; }
 .sat-actions { display: flex; flex-direction: column; gap: 12px; }
+.gsat-mock { background: var(--paper-raised); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 
 @media (max-width: 900px) {
   .hero { padding-top: 48px; }
   .hero-grid { gap: 24px; padding-bottom: 32px; }
   .hero-aside { padding: 20px; border-radius: 18px; }
   .hero-aside .quote { font-size: 18px; margin-bottom: 10px; }
-  .sat-grid { grid-template-columns: 1fr; }
+  .sat-grid, .exam99-grid { grid-template-columns: 1fr; }
+  .exam99-scopes li { grid-template-columns: 1fr; gap: 2px; }
   .section { padding: 56px 0; }
   .hero-grid, .about-grid, .weekly-grid, .consult-grid,
   .grid-3, .grid-2, .results-grid { grid-template-columns: 1fr; }
@@ -507,3 +509,126 @@ html.is-en .contact-pill strong.lang-en { display: block; }
 .weekly-points li.lang-en { display: none; }
 html.is-en .weekly-points li.lang-zh { display: none; }
 html.is-en .weekly-points li.lang-en { display: flex; }
+
+/* 手機：導覽放第二列，才放得下「學測猜題卷」與「段考加強卷」。 */
+@media (max-width: 560px) {
+  .site-header .bar { height: auto; flex-wrap: wrap; padding: 8px 0 6px; row-gap: 2px; }
+  .nav { width: 100%; flex-wrap: nowrap; justify-content: flex-start; margin-left: -7px; }
+  .nav .lang-toggle { margin-left: auto; min-height: 32px; }
+}
+
+#exam99 { scroll-margin-top: 76px; }
+.exam99 {
+  background: #ebe6db;
+  border-top: 1px solid #d5cfc2;
+}
+.exam99-grid {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 1.3fr 0.7fr;
+  align-items: start;
+}
+.exam99 h2 { margin-top: 8px; }
+.exam99-slogan {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.62em;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.45;
+}
+.exam99 .kicker { color: #56677c; }
+.exam99-copy p { margin: 0 0 12px; }
+.exam99-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
+  display: grid;
+  gap: 8px;
+}
+.exam99-points li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 14px;
+}
+.exam99-points li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  margin-top: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--steel-deep);
+}
+.exam99-points li.lang-en { display: none; }
+html.is-en .exam99-points li.lang-zh { display: none; }
+html.is-en .exam99-points li.lang-en { display: flex; }
+.exam99-scopes-wrap { margin-top: 28px; }
+.exam99-scope-title {
+  font-family: var(--display);
+  font-size: 18px;
+  margin: 0 0 6px;
+}
+.exam99-note {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #3e4c5e;
+}
+.exam99-scopes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+.exam99-scopes li {
+  display: grid;
+  grid-template-columns: 10.5rem 1fr;
+  gap: 6px 14px;
+  align-items: baseline;
+  background: var(--paper-raised);
+  border-radius: 16px;
+  box-shadow: var(--shadow-border);
+  padding: 12px 16px;
+  font-size: 14px;
+}
+.exam99-grade { font-weight: 600; color: var(--ink); }
+.exam99-scope { color: var(--charcoal); }
+.exam99-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.exam99-actions .btn { width: 100%; }
+.exam99-prices {
+  background: var(--paper-raised);
+  border-radius: 24px;
+  padding: 22px;
+  box-shadow: var(--shadow-border);
+  display: grid;
+  gap: 16px;
+}
+.exam99-prices p { margin: 0; }
+.exam99-prices .exam99-price-label {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin: 0 0 4px;
+}
+.exam99-price-line {
+  font-family: var(--display);
+  font-size: 34px;
+  line-height: 1;
+  margin: 0;
+  color: var(--ink);
+}
+.exam99-price-sub {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--muted);
+}

@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
+  <meta name="google-site-verification" content="SOkVAhLs7t2aSY_ar60dISeEnJbcfYg4mHM8b8gUIeQ" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>吳寬老師｜寬數 — SAT 數學、學測分科、寬數週練</title>
-  <meta name="description" content="吳寬老師（寬數）：交大應數畢業、Stanford OHS 數學老師、站前 SAT 數學老師。寬數週練每月 NT$799，每週學生題本＋家長解答，可先免費試做範例；Digital SAT 講義請私訊 IG @saber_math 索取。" />
+  <meta name="description" content="吳寬老師（寬數）：交大應數畢業｜現任國中數學教師｜曾任菁英國際 SAT 數學老師｜梭羅國際教育 AMC 競賽數學老師｜指導 Stanford OHS 學生數學，曾任監考。寬數週練第一週 NT$199，之後國小 699／國中 799／高中 999／SAT 1099／AMC 1099。Digital SAT 完整數學講義（21 章＋2 套模考）請私訊 IG @saber_math「SAT講義」。" />
   <link rel="canonical" href="https://kuanmath.vercel.app/" />
   <meta name="theme-color" content="#0f1419" />
   <meta property="og:site_name" content="寬數 · 吳寬老師" />
   <meta property="og:locale" content="zh_TW" />
   <meta property="og:title" content="吳寬老師｜寬數 — SAT 數學、學測分科、寬數週練" />
-  <meta property="og:description" content="交大應數畢業 · Stanford OHS 數學老師 · 站前 SAT。寬數週練每週題本＋家長解答，先免費試做範例。" />
+  <meta property="og:description" content="交大應數畢業｜現任國中數學教師｜曾任菁英國際 SAT 數學老師｜梭羅國際教育 AMC 競賽數學老師｜指導 Stanford OHS 學生數學，曾任監考。寬數週練第一週 NT$199，之後國小 699／國中 799／高中 999／SAT 1099／AMC 1099。" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://kuanmath.vercel.app/" />
   <meta property="og:image" content="https://kuanmath.vercel.app/og.png" />
@@ -20,9 +21,17 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://kuanmath.vercel.app/og.png" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f1419'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='16' fill='%238a9bb0' font-family='serif'%3E寬%3C/text%3E%3C/svg%3E" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600&amp;family=Noto+Serif+TC:wght@500;600;700&amp;display=swap" />
+  <link rel="preload" href="/fonts/km-sans-400.woff2" as="font" type="font/woff2" crossorigin />
+  <style>
+/* 首屏只載內文 400；粗體 500–700 與標題襯線由 index.html 底部的腳本在 load 之後才載。 */
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/km-sans-400.woff2) format('woff2');
+}
+  </style>
   <link rel="stylesheet" href="styles.css" />
   <script type="application/ld+json">
   {
@@ -34,11 +43,12 @@
         "name": "吳寬",
         "alternateName": ["吳寬老師", "Kuan Wu", "Saber"],
         "jobTitle": "數學老師",
+        "description": "交大應數畢業｜現任國中數學教師｜曾任菁英國際 SAT 數學老師｜梭羅國際教育 AMC 競賽數學老師｜指導 Stanford OHS 學生數學，曾任監考",
         "url": "https://kuanmath.vercel.app/",
         "image": "https://kuanmath.vercel.app/og.png",
         "alumniOf": { "@type": "CollegeOrUniversity", "name": "國立陽明交通大學 應用數學系" },
         "worksFor": { "@id": "https://kuanmath.vercel.app/#org" },
-        "knowsAbout": ["SAT Math", "Digital SAT", "學測數學", "分科測驗數學", "GRE Quant"],
+        "knowsAbout": ["SAT Math", "AMC 8/10/12", "Digital SAT", "學測數學", "分科測驗數學", "GRE Quant"],
         "sameAs": [
           "https://www.instagram.com/saber_math/",
           "https://www.facebook.com/profile.php?id=61594502669915",
@@ -60,13 +70,31 @@
           "https://www.facebook.com/profile.php?id=61594502669915",
           "https://www.youtube.com/channel/UCD_4earF60XJTSRYGCkU4Ug"
         ],
-        "makesOffer": {
-          "@type": "Offer",
-          "name": "寬數週練",
-          "url": "https://kuan-weekly.vercel.app/",
-          "price": "799",
-          "priceCurrency": "TWD"
-        }
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "name": "寬數週練",
+            "url": "https://kuan-weekly.vercel.app/",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "minPrice": "699",
+              "maxPrice": "1099",
+              "priceCurrency": "TWD",
+              "unitText": "MONTH",
+              "description": "第一週 NT$199，之後依年級每月：國小 699／國中 799／高中 999／SAT 1099／AMC 1099"
+            }
+          },
+          {
+            "@type": "AggregateOffer",
+            "name": "第二次段考加強卷",
+            "url": "https://kuanmath.vercel.app/#exam99",
+            "priceCurrency": "TWD",
+            "lowPrice": "99",
+            "highPrice": "399",
+            "offerCount": 2,
+            "description": "單級 NT$99（學生卷 PDF＋詳解家長卷 PDF）；全套國一～高二 NT$399。電子檔付款後傳送。"
+          }
+        ]
       }
     ]
   }
@@ -85,6 +113,8 @@
         <a class="hide-sm" href="#tracks"><span class="lang-zh">教學範疇</span><span class="lang-en">Tracks</span></a>
         <a href="#weekly"><span class="lang-zh">寬數週練</span><span class="lang-en">Weekly</span></a>
         <a href="#sat"><span class="lang-zh">SAT 講義</span><span class="lang-en">SAT notes</span></a>
+        <a href="#gsat-mock"><span class="lang-zh">學測猜題卷</span><span class="lang-en">GSAT mocks</span></a>
+        <a href="#exam99"><span class="lang-zh">段考加強卷</span><span class="lang-en">Midterm pack</span></a>
         <a class="hide-sm" href="#consult"><span class="lang-zh">聯絡</span><span class="lang-en">Contact</span></a>
         <button type="button" class="lang-toggle" id="langToggle" aria-label="Toggle language">EN</button>
       </nav>
@@ -104,8 +134,8 @@
             <p class="en-name lang-en">吳寬</p>
             <p class="lead lang-zh">把繁複觀念拆成能走的路。紮實與效率並行。</p>
             <p class="lead lang-en">Break complex ideas into a path you can walk. Depth and efficiency, together.</p>
-            <p class="sub lang-zh">交大應數畢業 · Stanford OHS 數學老師 · 站前 SAT 數學老師</p>
-            <p class="sub lang-en">NYCU Applied Math · Stanford OHS Math teacher · SAT Math at Zhanqian</p>
+            <p class="sub lang-zh">交大應數畢業｜現任國中數學教師｜曾任菁英國際 SAT 數學老師｜梭羅國際教育 AMC 競賽數學老師｜指導 Stanford OHS 學生數學，曾任監考</p>
+            <p class="sub lang-en">NYCU Applied Math graduate | Current junior-high math teacher | Former SAT Math teacher at Elite International | AMC contest math teacher at Solo International Education | Tutored Stanford OHS students in math; former proctor</p>
             <div class="btn-row">
               <a class="btn btn-steel" href="https://kuan-weekly.vercel.app/sample" target="_blank" rel="noopener">
                 <span class="lang-zh">免費試做週練範例</span>
@@ -116,8 +146,8 @@
                 <span class="lang-en">Get SAT notes</span>
               </a>
             </div>
-            <p class="hero-note lang-zh">寬數週練 NT$799／月 · 限 20 名 · <a href="#weekly">看方案</a></p>
-            <p class="hero-note lang-en">Kuan Weekly NT$799/mo · 20 seats · <a href="#weekly">See plan</a></p>
+            <p class="hero-note lang-zh">寬數週練 第一週 NT$199，之後國小 699／國中 799／高中 999／SAT 1099／AMC 1099 · 限 20 名 · <a href="#weekly">看方案</a></p>
+            <p class="hero-note lang-en">Kuan Weekly: first week NT$199, then Elementary 699 / Junior high 799 / Senior high 999 / SAT 1099 / AMC 1099 · 20 seats · <a href="#weekly">See plan</a></p>
           </div>
           <aside class="hero-aside">
             <p class="quote display lang-zh">「觀念要拆得夠細，路才走得夠穩。」</p>
@@ -156,8 +186,8 @@
             <p class="kicker">Product</p>
             <h2 class="display lang-zh">寬數週練</h2>
             <h2 class="display lang-en">Kuan Weekly Math</h2>
-            <p class="lead lang-zh">每週一份學生題本、一份家長解答 PDF。小一到高三與 SAT Math 都收；依年級、校內進度與弱點單元出題，不是固定同一本。</p>
-            <p class="lead lang-en">Each week: a student workbook PDF and a parent solutions PDF. Grades 1–12 plus SAT Math — tailored to grade, school pace, and weak units.</p>
+            <p class="lead lang-zh">每週一份學生題本、一份家長解答 PDF。小一到高三、SAT Math 與 AMC 8／10／12 都收；依年級、校內進度與弱點單元出題，不是固定同一本。</p>
+            <p class="lead lang-en">Each week: a student workbook PDF and a parent solutions PDF. Grades 1–12, SAT Math, and AMC 8/10/12 — tailored to grade, school pace, and weak units.</p>
             <ul class="weekly-points">
               <li class="lang-zh">兩份 PDF：學生題本（提示在題下）＋家長解答（步驟拆解）</li>
               <li class="lang-en">Two PDFs: student workbook (hints under items) + parent solutions (step-by-step)</li>
@@ -171,18 +201,22 @@
                 <span class="lang-zh">免費試做範例</span>
                 <span class="lang-en">Try a free sample</span>
               </a>
-              <a class="btn btn-ghost" href="https://kuan-weekly.vercel.app/" target="_blank" rel="noopener">
+              <a class="btn btn-ghost" href="https://kuan-weekly.vercel.app/#pricing" target="_blank" rel="noopener">
                 <span class="lang-zh">訂閱寬數週練</span>
                 <span class="lang-en">Subscribe</span>
               </a>
             </div>
+            <p class="lang-zh"><a href="https://kuan-weekly.vercel.app/units" target="_blank" rel="noopener">依單元找免費練習題 →</a></p>
+            <p class="lang-en"><a href="https://kuan-weekly.vercel.app/units" target="_blank" rel="noopener">Free practice by unit →</a></p>
+            <p class="lang-zh"><a href="https://kuan-weekly.vercel.app/diag?src=kuanmath-diag" target="_blank" rel="noopener">免費段考弱點檢測｜第二次段考 11/25-26 →</a></p>
+            <p class="lang-en"><a href="https://kuan-weekly.vercel.app/diag?src=kuanmath-diag" target="_blank" rel="noopener">Free exam weak-spot check (Taiwan midterm 11/25–26) →</a></p>
           </div>
           <div class="price-panel">
             <div>
               <span class="chip"><strong>20</strong> <span class="lang-zh">名正取</span><span class="lang-en">primary seats</span></span>
-              <p class="price-line">NT$799 <small class="lang-zh">／月 · 每名孩子</small><small class="lang-en">/mo · per child</small></p>
-              <p class="price-note lang-zh">或 NT$7990／年（約等於十個月月費）。名額額滿即停止收件。</p>
-              <p class="price-note lang-en">Or NT$7990/year (~10 months). Enrollment closes when seats fill.</p>
+              <p class="price-line">NT$199 <small class="lang-zh">第一週 · 每名孩子</small><small class="lang-en">first week · per child</small></p>
+              <p class="price-note lang-zh">第一週 NT$199，之後依年級每月：國小 699／國中 799／高中 999／SAT 1099／AMC 1099。年繳 NT$7,990 僅限國中。名額額滿即停止收件。</p>
+              <p class="price-note lang-en">First week NT$199, then monthly by level: Elementary 699 / Junior high 799 / Senior high 999 / SAT 1099 / AMC 1099. Yearly NT$7,990 is junior high only. Enrollment closes when seats fill.</p>
             </div>
             <a class="btn btn-paper" href="https://kuan-weekly.vercel.app/sample" target="_blank" rel="noopener">
               <span class="lang-zh">先試做一份範例</span>
@@ -200,10 +234,12 @@
           <p class="kicker">Digital SAT</p>
           <h2 class="display lang-zh">Digital SAT 數學講義</h2>
           <h2 class="display lang-en">Digital SAT Math notes</h2>
-          <p class="lang-zh">依 Digital SAT 題型整理的數學講義：觀念統整、常見陷阱與解題步驟，適合自學或搭配課程複習。</p>
-          <p class="lang-en">Math notes organized by Digital SAT question type: key ideas, common traps, and step-by-step methods.</p>
-          <p class="muted lang-zh">索取方式：私訊 IG <strong>@saber_math</strong> 或 Facebook 粉專「吳寬數學」，輸入「SAT講義」。</p>
-          <p class="muted lang-en">How to get it: DM Instagram <strong>@saber_math</strong> or the Facebook Page 吳寬數學 with 「SAT講義」.</p>
+          <p class="lang-zh">Digital SAT 完整數學講義 v1.0：21 章觀念練習本、解答本、2 套模考與附錄（公式／Desmos 速查、字彙索引、5／10 週課表）。題目全部原創，英文原題搭配中文詳解。電子 PDF，NT$990。</p>
+          <p class="lang-en">Complete Digital SAT Math book v1.0: 21-chapter workbook, solutions book, 2 full mock tests and appendices. All original problems in English with Chinese explanations. PDF, NT$990.</p>
+          <p class="lang-zh"><a href="https://kuan-weekly.vercel.app/sample?track=sat&amp;src=kuanmath#get">免費下載第 1 章試閱 →</a></p>
+          <p class="lang-en"><a href="https://kuan-weekly.vercel.app/sample?track=sat&amp;src=kuanmath#get">Free Chapter 1 preview →</a></p>
+          <p class="muted lang-zh">購買方式：私訊 IG <strong>@saber_math</strong> 或 Facebook 粉專「吳寬數學」，輸入「SAT講義」。</p>
+          <p class="muted lang-en">To buy: DM Instagram <strong>@saber_math</strong> or the Facebook Page 吳寬數學 with 「SAT講義」.</p>
         </div>
         <div class="sat-actions">
           <a class="btn btn-ink" href="https://www.instagram.com/saber_math/" target="_blank" rel="noopener">
@@ -218,6 +254,141 @@
       </div>
     </section>
 
+    <!-- GSAT MOCK PAPERS -->
+    <section class="section sat gsat-mock" id="gsat-mock">
+      <div class="wrap sat-grid">
+        <div>
+          <p class="kicker">GSAT Math</p>
+          <h2 class="display lang-zh">學測數學考前猜題卷</h2>
+          <h2 class="display lang-en">GSAT Math mock papers</h2>
+          <p class="lang-zh">數A、數B 各三回完整模擬卷，依 111–115 學測的命題分布原創設計。</p>
+          <p class="lang-zh">題型、題數、作答時間和正式考試相同，每回附完整詳解。</p>
+          <p class="lang-zh">加贈該科的命題分析報告，PDF 電子檔。</p>
+          <p class="lang-en">Math A and Math B, three full mock papers each, written from scratch to match the 2022–2026 GSAT topic distribution.</p>
+          <p class="lang-en">Same question types, count and time limit as the real exam; every paper comes with full solutions.</p>
+          <p class="lang-en">Includes that subject's exam-analysis report. PDF.</p>
+          <p class="muted lang-zh">私訊 IG <strong>@saber_math</strong>，或寄 Email 索取第 1 回試閱。</p>
+          <p class="muted lang-en">DM Instagram <strong>@saber_math</strong> or email for a preview of Paper 1.</p>
+        </div>
+        <div class="sat-actions">
+          <a class="btn btn-ink" href="https://ig.me/m/saber_math" target="_blank" rel="noopener">
+            <span class="lang-zh">私訊索取試閱</span>
+            <span class="lang-en">DM for a preview</span>
+          </a>
+          <a class="btn btn-paper" href="mailto:jjredick365@gmail.com?subject=%E5%AD%B8%E6%B8%AC%E7%8C%9C%E9%A1%8C%E5%8D%B7%E8%A9%A6%E9%96%B1">
+            <span class="lang-zh">Email 索取試閱</span>
+            <span class="lang-en">Email for a preview</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GSAT MINI QUIZ -->
+    <section class="section sat" id="gsat-quiz">
+      <div class="wrap sat-grid">
+        <div>
+          <p class="kicker">Mini Quiz</p>
+          <h2 class="display lang-zh">學測數學模擬小卷</h2>
+          <h2 class="display lang-en">GSAT Math mini quiz</h2>
+          <p class="lang-zh">線上免費小卷，數A、數B 各 10 題，手機直接作答，交卷立即看答案。</p>
+          <p class="lang-zh">想針對單一單元練習，可以依單元找免費練習題目。</p>
+          <p class="lang-en">Free online quiz: 10 questions each for Math A and Math B, right on your phone, with instant results.</p>
+          <p class="lang-en">Prefer drilling one topic? Browse free practice by unit.</p>
+        </div>
+        <div class="sat-actions">
+          <a class="btn btn-steel" href="https://kuan-weekly.vercel.app/quiz?src=kuanmath" target="_blank" rel="noopener">
+            <span class="lang-zh">開始做模擬小卷</span>
+            <span class="lang-en">Start the mini quiz</span>
+          </a>
+          <a class="btn btn-paper" href="https://kuan-weekly.vercel.app/units" target="_blank" rel="noopener">
+            <span class="lang-zh">依單元找練習題</span>
+            <span class="lang-en">Practice by unit</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECOND MIDTERM PACK. Files are sent after payment; not hosted here. -->
+    <section class="section exam99" id="exam99">
+      <div class="wrap exam99-grid">
+        <div class="exam99-copy">
+          <p class="kicker">Midterm pack</p>
+          <h2 class="display lang-zh">第二次段考加強卷<span class="exam99-slogan">符合每間學校段考試題｜寫一份就夠</span></h2>
+          <h2 class="display lang-en">Second-midterm booster<span class="exam99-slogan">Aligned to each school’s midterm scope — one set is enough</span></h2>
+          <p class="lang-zh">國一到高二的偏難加強卷，對準第二次段考常見單元。每一級兩份 PDF：學生卷可列印作答，詳解家長卷附答案與步驟。</p>
+          <p class="lang-en">A harder set for the second midterm, grades 7–11. Each grade is two PDFs: a student paper to print and write, and a parent paper with answers and worked solutions.</p>
+          <ul class="exam99-points">
+            <li class="lang-zh">單級 NT$99：學生卷 PDF ＋ 詳解家長卷 PDF</li>
+            <li class="lang-en">One grade NT$99: student PDF + parent solutions PDF</li>
+            <li class="lang-zh">全套國一～高二（高二為數A）NT$399</li>
+            <li class="lang-en">Full set, grades 7–11 (grade 11 is Math A): NT$399</li>
+            <li class="lang-zh">國中會考式 25 題（23 單選＋2 非選）；高中學測式縮版；偏難</li>
+            <li class="lang-en">Junior high: exam-style 25 questions (23 multiple choice + 2 constructed). Senior high: a shorter GSAT-style paper. Leaning hard.</li>
+            <li class="lang-zh">電子檔，付款確認後傳送，不寄實體</li>
+            <li class="lang-en">Digital files, sent after payment is confirmed. No physical copies.</li>
+          </ul>
+          <p class="muted lang-zh">私訊 IG、Facebook 或 Email，告知年級或全套。</p>
+          <p class="muted lang-en">Message on Instagram, Facebook, or email. Say the grade, or ask for the full set.</p>
+        </div>
+        <div class="exam99-actions">
+          <div class="exam99-prices">
+            <div>
+              <p class="exam99-price-label lang-zh">單級</p>
+              <p class="exam99-price-label lang-en">One grade</p>
+              <p class="exam99-price-line">NT$99</p>
+            </div>
+            <div>
+              <p class="exam99-price-label lang-zh">全套 · 國一～高二</p>
+              <p class="exam99-price-label lang-en">Full set · G7–G11</p>
+              <p class="exam99-price-line">NT$399</p>
+            </div>
+            <p class="exam99-price-sub lang-zh">學生卷 PDF ＋ 詳解家長卷 PDF</p>
+            <p class="exam99-price-sub lang-en">Student PDF + parent solutions PDF</p>
+          </div>
+          <a class="btn btn-ink" href="https://www.instagram.com/saber_math/" target="_blank" rel="noopener">
+            <span class="lang-zh">私訊 IG @saber_math</span>
+            <span class="lang-en">DM IG @saber_math</span>
+          </a>
+          <a class="btn btn-paper" href="https://www.facebook.com/profile.php?id=61594502669915" target="_blank" rel="noopener">
+            <span class="lang-zh">私訊 FB 粉專 吳寬數學</span>
+            <span class="lang-en">Message FB Page 吳寬數學</span>
+          </a>
+          <a class="btn btn-paper" href="mailto:jjredick365@gmail.com?subject=%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%AE%B5%E8%80%83%E5%8A%A0%E5%BC%B7%E5%8D%B7&amp;body=%E5%B9%B4%E7%B4%9A%E6%88%96%E5%85%A8%E5%A5%97%EF%BC%9A">
+            <span class="lang-zh">Email 告知年級或全套</span>
+            <span class="lang-en">Email the grade or full set</span>
+          </a>
+        </div>
+      </div>
+      <div class="wrap exam99-scopes-wrap">
+        <h3 class="exam99-scope-title lang-zh">各級範圍</h3>
+        <h3 class="exam99-scope-title lang-en">Scope by grade</h3>
+        <p class="exam99-note lang-zh">實際範圍以學校公告為準。</p>
+        <p class="exam99-note lang-en">Actual scope follows each school’s announcement.</p>
+        <ul class="exam99-scopes">
+          <li>
+            <span class="exam99-grade"><span class="lang-zh">國一</span><span class="lang-en">Grade 7</span></span>
+            <span class="exam99-scope"><span class="lang-zh">第2章 因數倍數・分數四則・指數律（不含一元一次方程式）</span><span class="lang-en">Chapter 2: factors and multiples, fraction arithmetic, laws of exponents (one-variable linear equations not included)</span></span>
+          </li>
+          <li>
+            <span class="exam99-grade"><span class="lang-zh">國二</span><span class="lang-en">Grade 8</span></span>
+            <span class="exam99-scope"><span class="lang-zh">根式・畢氏定理・因式分解（不含十字交乘）</span><span class="lang-en">Radicals, the Pythagorean theorem, factoring (cross-multiplication not included)</span></span>
+          </li>
+          <li>
+            <span class="exam99-grade"><span class="lang-zh">國三</span><span class="lang-en">Grade 9</span></span>
+            <span class="exam99-scope"><span class="lang-zh">相似三角形應用・圓</span><span class="lang-en">Applications of similar triangles; circles</span></span>
+          </li>
+          <li>
+            <span class="exam99-grade"><span class="lang-zh">高一</span><span class="lang-en">Grade 10</span></span>
+            <span class="exam99-scope"><span class="lang-zh">直線與圓・多項式除法／餘式定理</span><span class="lang-en">Lines and circles; polynomial division / remainder theorem</span></span>
+          </li>
+          <li>
+            <span class="exam99-grade"><span class="lang-zh">高二數A</span><span class="lang-en">Grade 11 Math A</span></span>
+            <span class="exam99-scope"><span class="lang-zh">指數與對數函數</span><span class="lang-en">Exponential and logarithmic functions</span></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <!-- ABOUT -->
     <section class="section" id="about">
       <div class="wrap">
@@ -229,8 +400,8 @@
               <h2 class="display lang-en">About</h2>
             </div>
             <div class="about-body">
-              <p class="lang-zh">畢業於國立陽明交通大學應用數學系。目前專職投入數學教育與升學輔導，教學範疇涵蓋國內國高中大考、雙語／國際學校教材，以及美制高端大考（SAT / GRE）。在個別指導與補教體系中累積了扎實的執教資歷，重視「紮實與效率並行」，擅長將繁複觀念拆解並提供心態支持。</p>
-              <p class="lang-en">Applied Mathematics graduate of National Yang Ming Chiao Tung University. Full-time math educator covering Taiwan high-school exams, bilingual/international curricula, and US exams (SAT / GRE). Experience across 1:1 tutoring and prep schools — breaking ideas down and supporting exam mindset.</p>
+              <p class="lang-zh">畢業於國立陽明交通大學應用數學系。現任國中數學教師，並投入升學輔導，教學範疇涵蓋國內國高中大考、雙語／國際學校教材，以及美制高端大考（SAT / GRE）。在個別指導與補教體系中累積了扎實的執教資歷，重視「紮實與效率並行」，擅長將繁複觀念拆解並提供心態支持。</p>
+              <p class="lang-en">Applied Mathematics graduate of National Yang Ming Chiao Tung University. Junior high math teacher, also covering Taiwan high-school exams, bilingual/international curricula, and US exams (SAT / GRE). Experience across 1:1 tutoring and prep schools — breaking ideas down and supporting exam mindset.</p>
             </div>
           </div>
           <blockquote class="pull-quote lang-zh">觀念要拆得夠細，路才走得夠穩。</blockquote>
@@ -262,8 +433,8 @@
             <span class="idx">02</span>
             <h3 class="lang-zh">SAT Math</h3>
             <h3 class="lang-en">SAT Math</h3>
-            <p class="lang-zh">站前 SAT 數學老師，對接 Digital SAT 題型與美制升學節奏。</p>
-            <p class="lang-en">SAT Math teacher at Zhanqian, aligned to Digital SAT and US admissions pace.</p>
+            <p class="lang-zh">曾任菁英國際 SAT 數學老師，對接 Digital SAT 題型與美制升學節奏。</p>
+            <p class="lang-en">Former SAT Math teacher at Elite International, aligned to Digital SAT and US admissions pace.</p>
             <a class="card-link" href="#sat"><span class="lang-zh">索取 SAT 講義 →</span><span class="lang-en">Get SAT notes →</span></a>
           </article>
           <article class="card">
@@ -309,34 +480,50 @@
           <p class="section-num">03</p>
           <h2 class="display lang-zh">重要經歷</h2>
           <h2 class="display lang-en">Experience</h2>
+          <p class="muted lang-zh">交大應數畢業｜現任國中數學教師｜曾任菁英國際 SAT 數學老師｜梭羅國際教育 AMC 競賽數學老師｜指導 Stanford OHS 學生數學，曾任監考</p>
+          <p class="muted lang-en">NYCU Applied Math graduate | Current junior-high math teacher | Former SAT Math teacher at Elite International | AMC contest math teacher at Solo International Education | Tutored Stanford OHS students in math; former proctor</p>
         </div>
         <div class="timeline">
           <article class="exp">
             <div>
               <p class="loc lang-zh">臺灣</p>
               <p class="loc lang-en">Taiwan</p>
-              <p class="place display lang-zh">實驗中學</p>
-              <p class="place display lang-en">Experimental High School</p>
+              <p class="place display lang-zh">國中</p>
+              <p class="place display lang-en">Junior high school</p>
             </div>
             <div>
-              <p class="role lang-zh">國中與高中數學教師</p>
-              <p class="role lang-en">Junior &amp; senior high math teacher</p>
-              <p class="desc lang-zh">國高中數學課堂，雙語部與升學並進。</p>
-              <p class="desc lang-en">Classroom math across bilingual and exam tracks.</p>
+              <p class="role lang-zh">現任國中數學教師</p>
+              <p class="role lang-en">Junior high math teacher (current)</p>
+              <p class="desc lang-zh">國中數學課堂教學，段考與會考並進。</p>
+              <p class="desc lang-en">Classroom math for school exams and the CAP.</p>
             </div>
           </article>
           <article class="exp">
             <div>
               <p class="loc lang-zh">臺灣</p>
               <p class="loc lang-en">Taiwan</p>
-              <p class="place display lang-zh">站前補習班</p>
-              <p class="place display lang-en">Zhanqian prep school</p>
+              <p class="place display lang-zh">菁英國際</p>
+              <p class="place display lang-en">Elite International</p>
             </div>
             <div>
-              <p class="role lang-zh">SAT 數學老師</p>
-              <p class="role lang-en">SAT Math teacher</p>
+              <p class="role lang-zh">曾任 SAT 數學老師</p>
+              <p class="role lang-en">Former SAT Math teacher</p>
               <p class="desc lang-zh">大型補教體系中的專科教學，對準美制大考。</p>
               <p class="desc lang-en">Specialist teaching aimed at US admissions exams.</p>
+            </div>
+          </article>
+          <article class="exp">
+            <div>
+              <p class="loc lang-zh">臺灣</p>
+              <p class="loc lang-en">Taiwan</p>
+              <p class="place display lang-zh">梭羅國際教育</p>
+              <p class="place display lang-en">Solo International Education</p>
+            </div>
+            <div>
+              <p class="role lang-zh">AMC 競賽數學老師</p>
+              <p class="role lang-en">AMC competition math teacher</p>
+              <p class="desc lang-zh">AMC 10 等數學競賽指導，拆解題型與解題策略。</p>
+              <p class="desc lang-en">AMC 10 and competition math — problem types and strategy.</p>
             </div>
           </article>
           <article class="exp">
@@ -347,10 +534,10 @@
               <p class="place display lang-en">California HS graduates</p>
             </div>
             <div>
-              <p class="role lang-zh">SAT 全英數學老師</p>
-              <p class="role lang-en">All-English SAT Math teacher</p>
-              <p class="desc lang-zh">全英語授課，對接美制升學考試。</p>
-              <p class="desc lang-en">Full English instruction for US college exams.</p>
+              <p class="role lang-zh">SAT 數學全英家教</p>
+              <p class="role lang-en">All-English SAT Math tutor</p>
+              <p class="desc lang-zh">全英語授課，學生 SAT 數學 660 → 750。</p>
+              <p class="desc lang-en">Full English instruction; student SAT Math 660 → 750.</p>
             </div>
           </article>
           <article class="exp">
@@ -360,10 +547,10 @@
               <p class="place display">Stanford Online High School</p>
             </div>
             <div>
-              <p class="role lang-zh">數學老師暨官方監考官</p>
-              <p class="role lang-en">Math teacher &amp; official proctor</p>
-              <p class="desc lang-zh">官方監考與數學教學並行。</p>
-              <p class="desc lang-en">Official proctoring alongside math instruction.</p>
+              <p class="role lang-zh">指導 Stanford OHS 學生數學，曾任監考</p>
+              <p class="role lang-en">Tutored Stanford OHS students in math; former proctor</p>
+              <p class="desc lang-zh">指導該校學生數學，並曾任監考。</p>
+              <p class="desc lang-en">Math instruction for its students, and prior proctoring.</p>
             </div>
           </article>
           <article class="exp">
@@ -540,6 +727,7 @@
                   <option value="國中／國小">國中／國小 · JH/ES</option>
                   <option value="寬數週練">寬數週練 · Weekly</option>
                   <option value="SAT講義">SAT 講義 · SAT notes</option>
+                  <option value="段考加強卷">第二次段考加強卷 · Midterm pack</option>
                 </select>
               </div>
               <div>
@@ -574,9 +762,11 @@
       </div>
       <div class="footer-links">
         <a href="#weekly"><span class="lang-zh">寬數週練</span><span class="lang-en">Weekly</span></a>
-        <a href="https://kuan-weekly.vercel.app/" target="_blank" rel="noopener"><span class="lang-zh">訂閱／示範</span><span class="lang-en">Subscribe / Demo</span></a>
+        <a href="https://kuan-weekly.vercel.app/#pricing" target="_blank" rel="noopener"><span class="lang-zh">訂閱／示範</span><span class="lang-en">Subscribe / Demo</span></a>
         <a href="https://kuan-weekly.vercel.app/sample" target="_blank" rel="noopener"><span class="lang-zh">免費試做範例</span><span class="lang-en">Free sample</span></a>
         <a href="#sat"><span class="lang-zh">SAT 講義</span><span class="lang-en">SAT notes</span></a>
+        <a href="#gsat-mock"><span class="lang-zh">學測猜題卷</span><span class="lang-en">GSAT mocks</span></a>
+        <a href="#exam99"><span class="lang-zh">段考加強卷</span><span class="lang-en">Midterm pack</span></a>
         <a href="https://www.instagram.com/saber_math/" target="_blank" rel="noopener">Instagram @saber_math</a>
         <a href="https://www.facebook.com/profile.php?id=61594502669915" target="_blank" rel="noopener"><span class="lang-zh">Facebook 吳寬數學</span><span class="lang-en">Facebook 吳寬數學</span></a>
         <a href="https://www.youtube.com/channel/UCD_4earF60XJTSRYGCkU4Ug" target="_blank" rel="noopener">YouTube Saber數學</a>
@@ -630,5 +820,35 @@
       }
     })();
   </script>
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    (function () {
+      function ev(name, data) { try { window.va("event", { name: name, data: data }); } catch (e) {} }
+      document.addEventListener("click", function (e) {
+        var a = e.target && e.target.closest ? e.target.closest("a") : null;
+        if (!a) return;
+        var href = a.getAttribute("href") || "";
+        if (/instagram\.com|ig\.me/i.test(href)) ev("ig_dm_click", { page: "kuanmath" });
+        else if (href.indexOf("mailto:") === 0) ev("email_click", { page: "kuanmath" });
+        else if (/kuan-weekly\.vercel\.app\/sample/.test(href)) ev("sample_link_click", { page: "kuanmath" });
+        else if (/kuan-weekly\.vercel\.app\/units/.test(href)) ev("units_link_click", { page: "kuanmath" });
+        else if (/kuan-weekly\.vercel\.app\/quiz/.test(href)) ev("quiz_link_click", { page: "kuanmath" });
+      }, true);
+      document.addEventListener("submit", function () { ev("email_click", { page: "kuanmath", via: "waitlist_form" }); }, true);
+    })();
+  </script>
+  <script>
+    // 粗體與標題字型在頁面載完後才下載；之前先用系統字型。
+    (function () {
+      function go() {
+        [["Noto Sans TC", "/fonts/km-sans-500-700.woff2", "500 700"], ["Noto Serif TC", "/fonts/km-serif-500-700.woff2", "500 700"]].forEach(function (f) {
+          if (!window.FontFace) return;
+          new FontFace(f[0], "url(" + f[1] + ") format('woff2')", { weight: f[2], style: "normal", display: "swap" }).load().then(function (ff) { document.fonts.add(ff); }).catch(function () {});
+        });
+      }
+      if (document.readyState === "complete") go(); else window.addEventListener("load", go, { once: true });
+    })();
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
