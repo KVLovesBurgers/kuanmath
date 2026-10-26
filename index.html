@@ -128,6 +128,20 @@
         <div class="hero-grid">
           <div>
             <p class="kicker">Kuan Wu · Math</p>
+            <div class="exam-countdown" id="examCountdown">
+              <p class="exam-cd" data-date="2027-01-22" hidden>
+                <span class="lang-zh exam-cd-pending">距離 116 學測（2027/1/22）還有 <strong class="exam-cd-days"></strong> 天</span>
+                <span class="lang-zh exam-cd-started">116 學測（2027/1/22）已開始</span>
+                <span class="lang-en exam-cd-pending"><strong class="exam-cd-days"></strong> <span class="exam-cd-unit">days</span> to 116 GSAT (2027/1/22)</span>
+                <span class="lang-en exam-cd-started">116 GSAT (2027/1/22) has started</span>
+              </p>
+              <p class="exam-cd" data-date="2027-05-15" hidden>
+                <span class="lang-zh exam-cd-pending">距離 116 會考（2027/5/15）還有 <strong class="exam-cd-days"></strong> 天</span>
+                <span class="lang-zh exam-cd-started">116 會考（2027/5/15）已開始</span>
+                <span class="lang-en exam-cd-pending"><strong class="exam-cd-days"></strong> <span class="exam-cd-unit">days</span> to 116 CAP (2027/5/15)</span>
+                <span class="lang-en exam-cd-started">116 CAP (2027/5/15) has started</span>
+              </p>
+            </div>
             <h1 class="display lang-zh">吳寬老師</h1>
             <h1 class="display lang-en">Kuan Wu</h1>
             <p class="en-name lang-zh">Kuan Wu</p>
@@ -847,6 +861,80 @@
         });
       }
       if (document.readyState === "complete") go(); else window.addEventListener("load", go, { once: true });
+    })();
+  </script>
+  <script>
+    (function () {
+      var root = document.getElementById("examCountdown");
+      if (!root) return;
+      var DAY = 86400000;
+
+      function taipeiOffsetMs(utcMs) {
+        var whole = utcMs - (utcMs % 1000);
+        var fmt = new Intl.DateTimeFormat("en-US", {
+          timeZone: "Asia/Taipei",
+          hourCycle: "h23",
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit"
+        });
+        var map = {};
+        fmt.formatToParts(new Date(whole)).forEach(function (part) {
+          map[part.type] = part.value;
+        });
+        var hour = Number(map.hour);
+        if (hour === 24) hour = 0;
+        var zonedAsUtc = Date.UTC(
+          Number(map.year),
+          Number(map.month) - 1,
+          Number(map.day),
+          hour,
+          Number(map.minute),
+          Number(map.second)
+        );
+        return zonedAsUtc - whole;
+      }
+
+      // Whole days until 00:00 Asia/Taipei on iso (YYYY-MM-DD), rounded up.
+      // 0 means that midnight has passed.
+      function daysUntil(iso, nowMs) {
+        var y = Number(iso.slice(0, 4));
+        var m = Number(iso.slice(5, 7));
+        var d = Number(iso.slice(8, 10));
+        if (!y || !m || !d) return 0;
+        var approx = Date.UTC(y, m - 1, d) - 8 * 3600000;
+        var target = Date.UTC(y, m - 1, d) - taipeiOffsetMs(approx);
+        var diff = target - nowMs;
+        if (diff <= 0) return 0;
+        return Math.ceil(diff / DAY);
+      }
+
+      function render() {
+        var now = Date.now();
+        root.querySelectorAll("[data-date]").forEach(function (el) {
+          var days = daysUntil(el.getAttribute("data-date"), now);
+          if (days <= 0) {
+            el.classList.add("is-started");
+          } else {
+            el.classList.remove("is-started");
+            el.querySelectorAll(".exam-cd-days").forEach(function (node) {
+              node.textContent = String(days);
+            });
+            el.querySelectorAll(".exam-cd-unit").forEach(function (node) {
+              node.textContent = days === 1 ? "day" : "days";
+            });
+          }
+          el.hidden = false;
+        });
+      }
+
+      try {
+        render();
+        setInterval(render, 60000);
+      } catch (err) {}
     })();
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
