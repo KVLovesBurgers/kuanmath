@@ -23,7 +23,6 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f1419'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='16' fill='%238a9bb0' font-family='serif'%3E寬%3C/text%3E%3C/svg%3E" />
 <link rel="preload" href="/fonts/km-sans-400.woff2" as="font" type="font/woff2" crossorigin />
 <style>
-/* 首屏只載內文 400；粗體 500–700 與標題襯線由 index.html 底部的腳本在 load 之後才載。 */
 @font-face {
 font-family: 'Noto Sans TC';
 font-style: normal;
@@ -137,7 +136,6 @@ src: url(/fonts/km-sans-400.woff2) format('woff2');
 </header>
 
 <main id="top">
-<!-- HERO -->
 <section class="hero">
 <div class="wrap">
 <div class="hero-grid">
@@ -218,7 +216,6 @@ src: url(/fonts/km-sans-400.woff2) format('woff2');
 </div>
 </section>
 
-<!-- SECOND MIDTERM PACK. Files are sent after payment; not hosted here. -->
 <section class="section exam99" id="exam99">
 <div class="wrap exam99-grid">
 <div class="exam99-copy">
@@ -302,7 +299,6 @@ src: url(/fonts/km-sans-400.woff2) format('woff2');
 </section>
 
 
-<!-- CAP COURSE WAITLIST (no price / hours / date / payment link) -->
 <section class="section sat huikao" id="huikao">
 <div class="wrap sat-grid">
 <div>
@@ -333,7 +329,6 @@ src: url(/fonts/km-sans-400.woff2) format('woff2');
 </div>
 </section>
 
-<!-- WEEKLY — prominent, after hero -->
 <section class="weekly" id="weekly">
 <div class="wrap weekly-inner">
 <div class="weekly-grid">
@@ -382,8 +377,6 @@ src: url(/fonts/km-sans-400.woff2) format('woff2');
 </div>
 </section>
 
-<!-- SAT NOTES -->
-<!-- SAT NOV TRAPS FREE TRIAL -->
 <section class="section sat" id="sat-traps">
 <div class="wrap sat-grid">
 <div>
@@ -430,7 +423,6 @@ src: url(/fonts/km-sans-400.woff2) format('woff2');
 </div>
 </section>
 
-<!-- GSAT MOCK PAPERS -->
 <section class="section sat gsat-mock" id="gsat-mock">
 <div class="wrap sat-grid">
 <div>
@@ -459,7 +451,6 @@ src: url(/fonts/km-sans-400.woff2) format('woff2');
 </div>
 </section>
 
-<!-- GSAT MINI QUIZ -->
 <section class="section sat" id="gsat-quiz">
 <div class="wrap sat-grid">
 <div>
@@ -484,7 +475,6 @@ src: url(/fonts/km-sans-400.woff2) format('woff2');
 </div>
 </section>
 
-<!-- ABOUT -->
 <section class="section" id="about">
 <div class="wrap">
 <div class="about-grid">
@@ -505,7 +495,6 @@ src: url(/fonts/km-sans-400.woff2) format('woff2');
 </div>
 </section>
 
-<!-- TRACKS -->
 <section class="section" id="tracks" style="padding-top:0">
 <div class="wrap">
 <div class="section-head">
@@ -568,7 +557,6 @@ src: url(/fonts/km-sans-400.woff2) format('woff2');
 </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section class="section" id="experience" style="background:#ebe6db">
 <div class="wrap">
 <div class="section-head">
@@ -665,7 +653,6 @@ src: url(/fonts/km-sans-400.woff2) format('woff2');
 </div>
 </section>
 
-<!-- FEATURES -->
 <section class="section" id="features">
 <div class="wrap">
 <div class="section-head">
@@ -706,7 +693,6 @@ src: url(/fonts/km-sans-400.woff2) format('woff2');
 </div>
 </section>
 
-<!-- RESULTS -->
 <section class="section" id="results" style="padding-top:0">
 <div class="wrap">
 <div class="section-head">
@@ -745,7 +731,6 @@ src: url(/fonts/km-sans-400.woff2) format('woff2');
 </div>
 </section>
 
-<!-- CONSULT -->
 <section class="section consult" id="consult">
 <div class="wrap">
 <div class="section-head">
@@ -934,7 +919,6 @@ document.addEventListener("submit", function () { ev("email_click", { page: "kua
 })();
 </script>
 <script>
-// 粗體與標題字型在頁面載完後才下載；之前先用系統字型。
 (function () {
 function go() {
 [["Noto Sans TC", "/fonts/km-sans-500-700.woff2", "500 700"], ["Noto Serif TC", "/fonts/km-serif-500-700.woff2", "500 700"]].forEach(function (f) {
@@ -980,8 +964,6 @@ Number(map.second)
 return zonedAsUtc - whole;
 }
 
-// Whole days until 00:00 Asia/Taipei on iso (YYYY-MM-DD), rounded up.
-// 0 means that midnight has passed.
 function daysUntil(iso, nowMs) {
 var y = Number(iso.slice(0, 4));
 var m = Number(iso.slice(5, 7));
