@@ -662,3 +662,54 @@ html.is-en .exam99-points li.lang-en { display: flex; }
   font-size: 13px;
   color: var(--muted);
 }
+
+/* ===== 2026-11-10 優化 ===== */
+.badge-free {
+  display: inline-block; margin-right: 6px; padding: 1px 7px; border-radius: 999px;
+  font-size: 11px; font-weight: 700; line-height: 1.6; letter-spacing: 0.04em;
+  background: var(--steel); color: var(--ink); text-decoration: none; vertical-align: 1px;
+}
+.hero-links a { font-weight: 600; }
+.proof-line {
+  margin: 0 0 28px; font-size: 13px; line-height: 1.7;
+  color: color-mix(in srgb, var(--paper) 62%, transparent);
+}
+.proof-line a { color: #c9d6e6; text-decoration: underline; text-underline-offset: 3px; }
+.dm-hint { margin: 0; font-size: 13px; color: var(--muted); }
+.dm-hint strong { color: var(--ink); }
+.huikao { background: var(--paper-raised); border-top: 1px solid var(--line); }
+.huikao-cta { margin-top: 4px; }
+#huikao, #weekly, #sat, #sat-traps, #gsat-mock, #consult { scroll-margin-top: 76px; }
+
+/* 加強卷：手機單欄、按鈕全寬（原 900px 規則被後面的 .exam99-grid 蓋掉） */
+@media (max-width: 900px) {
+  .exam99-grid { grid-template-columns: 1fr; }
+  .exam99-actions .btn { width: 100%; }
+}
+
+/* 手機：導覽一行、可左右滑、膠囊樣式；首屏只留一個主按鈕 */
+@media (max-width: 560px) {
+  .site-header .bar { position: relative; }
+  .nav {
+    width: calc(100% + 16px); margin: 0 -16px 0 0; margin-left: 0;
+    flex-wrap: nowrap; justify-content: flex-start; gap: 6px;
+    overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    padding: 2px 16px 4px 0; scroll-padding-left: 0;
+  }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav .hide-sm { display: inline-flex; }
+  .nav a {
+    flex: 0 0 auto; white-space: nowrap; padding: 6px 12px; border-radius: 999px;
+    font-size: 13px; line-height: 1.4;
+    background: color-mix(in srgb, var(--steel) 14%, transparent);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--steel) 30%, transparent);
+  }
+  .nav .lang-toggle { position: absolute; top: 8px; right: 0; margin: 0; min-height: 30px; }
+  .hero .btn-row { gap: 8px 18px; align-items: center; }
+  .hero .btn-row .btn-ink { width: 100%; background: var(--steel); color: var(--ink); font-weight: 600; }
+  .hero .btn-row .btn-sub {
+    min-height: 32px; padding: 0; background: none; box-shadow: none; border-radius: 0;
+    font-size: 13px; font-weight: 600; color: #c9d6e6;
+    text-decoration: underline; text-underline-offset: 3px;
+  }
+}
